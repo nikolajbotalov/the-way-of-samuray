@@ -1,0 +1,13 @@
+.content {
+  grid-area: main-content;
+  background-color: cyan;
+}
+.header {
+  width: 1200px;
+  height: 300px;
+}
+.avatar {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+}
