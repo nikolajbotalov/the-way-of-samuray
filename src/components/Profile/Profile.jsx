@@ -1,23 +1,14 @@
 import React from 'react';
 
-import { MyPosts } from './../../components';
+import { MyPosts, ProfileInfo } from './../../components';
 
 import classes from './Profile.module.css';
 
-import ProfileHeaderImage from './../../images/profile/profile-header.jpg';
-import Avatar from './../../images/profile/avatar.png';
-
-function Profile() {
+function Profile(props) {
   return (
-    <div className={classes.content}>
-      <div>
-        <img src={ProfileHeaderImage} alt="profile header" className={classes.header} />
-      </div>
-      <div>
-        <img src={Avatar} alt="profile avatar" className={classes.avatar} />
-        desc
-      </div>
-      <MyPosts />
+    <div>
+      <ProfileInfo />
+      <MyPosts posts={props.state.posts} />
     </div>
   );
 }

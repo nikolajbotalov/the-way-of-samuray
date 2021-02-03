@@ -1,4 +1,5 @@
 import React from 'react';
+import { NavLink } from 'react-router-dom';
 
 import classes from './NavBar.module.css';
 
@@ -6,20 +7,30 @@ function NavBar() {
   return (
     <React.Fragment>
       <nav className={classes.nav}>
-        <div className={`${classes.item} ${classes.active}`}>
-          <a>Профиль</a>
+        <div className={classes.item}>
+          <NavLink to="/profile" activeClassName={classes.active}>
+            Профиль
+          </NavLink>
         </div>
         <div className={classes.item}>
-          <a>Сообщение</a>
+          <NavLink to="/dialogs" activeClassName={classes.active}>
+            Сообщение
+          </NavLink>
         </div>
         <div className={classes.item}>
-          <a>Новости</a>
+          <NavLink to="/feeds" activeClassName={classes.active}>
+            Новости
+          </NavLink>
         </div>
         <div className={classes.item}>
-          <a>Музыка</a>
+          <NavLink to="/music" activeClassName={classes.active}>
+            Музыка
+          </NavLink>
         </div>
         <div className={classes.item}>
-          <a>Настройки</a>
+          <NavLink to="/settings" activeClassName={classes.active}>
+            Настройки
+          </NavLink>
         </div>
       </nav>
     </React.Fragment>

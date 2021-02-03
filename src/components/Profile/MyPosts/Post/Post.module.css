@@ -1,12 +1,25 @@
 .item {
   color: black;
+  font-weight: normal;
+  font-style: normal;
+  font-size: 16px;
 }
 .avatar {
   width: 50px;
   height: 50px;
   border-radius: 50%;
 }
+.statistic {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
 .like {
+  width: 25px;
+  height: 25px;
+  border-radius: 50%;
+}
+.share {
   width: 25px;
   height: 25px;
   border-radius: 50%;
