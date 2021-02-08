@@ -17,7 +17,7 @@ function Dialogs(props) {
       <div className={classes.dialogsItems}>{dialogsElements}</div>
       <div className={classes.messages}>
         {messagesElements}
-        <NewMessage />
+        <NewMessage addMessage={props.addMessage} />
       </div>
     </div>
   );
