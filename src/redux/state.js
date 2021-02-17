@@ -1,6 +1,8 @@
 const ADD_POST = 'ADD-POST';
 const UPDATE_NEW_POST_TEXT = 'UPDATE-NEW-POST-TEXT';
-const ADD_NEW_MESSAGE = 'ADD-NEW-MESSAGE';
+
+const SEND_MESSAGE = 'SEND-MESSAGE';
+const UPDATE_NEW_MESSAGE_BODY = 'ADD-NEW-MESSAGE-BODY';
 
 let store = {
   _state: {
@@ -29,6 +31,7 @@ let store = {
         { id: 2, message: 'Хорошо, у тебя как?' },
         { id: 3, message: 'Замечательно' },
       ],
+      newMessageBody: '',
     },
   },
   // Перерисовываем приложение
@@ -56,16 +59,22 @@ let store = {
       this._state.profilePage.newPostText = '';
       this._callSubscriber(this._state);
     } else if (action.type === UPDATE_NEW_POST_TEXT) {
-      // метод для добавления текста в новый пост
+      // метод для обновления текста в новом посте
       this._state.profilePage.newPostText = action.newText;
       this._callSubscriber(this._state);
-    } else if (action.type === ADD_NEW_MESSAGE) {
-      let newMessage = {
-        // метод для добавления нового сообщения
+    } else if (action.type === SEND_MESSAGE) {
+      // метод для добавления нового сообщения
+      let body = this._state.dialogsPage.newMessageBody;
+      this._state.dialogsPage.newMessageBody = '';
+      this._state.dialogsPage.messages.push({
         id: 4,
-        message: action.message,
-      };
-      this._state.dialogsPage.messages.push(newMessage);
+        message: body,
+      });
+      this._callSubscriber(this._state);
+    } else if (action.type === UPDATE_NEW_MESSAGE_BODY) {
+      // метод для обновления текста в новом сообщении
+      this._state.dialogsPage.newMessageBody = action.newBody;
+      this._callSubscriber(this._state);
     }
   },
 };
@@ -79,8 +88,13 @@ export const updateNewPostTextActionCreator = (text) => ({
   newText: text,
 });
 
-export const addNewMessageActionCreator = () => ({
-  type: ADD_NEW_MESSAGE,
+export const sendMessageCreator = () => ({
+  type: SEND_MESSAGE,
+});
+
+export const updateNewMessageBodyCreator = (body) => ({
+  type: UPDATE_NEW_MESSAGE_BODY,
+  newBody: body,
 });
 
 export default store;

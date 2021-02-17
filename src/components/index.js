@@ -9,7 +9,6 @@ export { default as Post } from './Profile/MyPosts/Post/Post';
 export { default as Dialogs } from './Dialogs/Dialogs';
 export { default as DialogItem } from './Dialogs/DialogItem/DialogItem';
 export { default as Message } from './Dialogs/Message/Message';
-export { default as NewMessage } from './Dialogs/NewMesage/NewMessage';
 // feeds page components
 export { default as Feeds } from './Feeds/Feeds';
 export { default as Music } from './Music/Music';
