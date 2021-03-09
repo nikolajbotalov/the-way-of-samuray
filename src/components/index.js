@@ -4,9 +4,11 @@ export { default as NavBar } from './NavBar/NavBar';
 export { default as Profile } from './Profile/Profile';
 export { default as ProfileInfo } from './Profile/ProfileInfo/ProfileInfo';
 export { default as MyPosts } from './Profile/MyPosts/MyPosts';
+export { default as MyPostsContainer } from './Profile/MyPosts/MyPostsContainer';
 export { default as Post } from './Profile/MyPosts/Post/Post';
 // dialogs page components
 export { default as Dialogs } from './Dialogs/Dialogs';
+export { default as DialogsContainer } from './Dialogs/DialogsContainer';
 export { default as DialogItem } from './Dialogs/DialogItem/DialogItem';
 export { default as Message } from './Dialogs/Message/Message';
 // feeds page components
